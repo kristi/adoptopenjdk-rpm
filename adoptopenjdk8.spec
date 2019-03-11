@@ -12,8 +12,12 @@ BuildArch: x86_64
 Group: Development/Tools
 License: https://openjdk.java.net/legal/gplv2+ce.html
 URL: https://adoptopenjdk.net
+
+# Download sources
+%undefine _disable_source_fetch
 Source0: https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u202-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u202b08.tar.gz
-Source1: https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u202-b08/OpenJDK8U-jre_x64_linux_hotspot_8u202b08.tar.gz.sha256.txt
+Source1: https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u202-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u202b08.tar.gz.sha256.txt
+
 Requires(post): %{_sbindir}/alternatives
 Requires(postun): %{_sbindir}/alternatives
 AutoReq: 0
@@ -25,6 +29,10 @@ AdoptOpenJDK 8 Java JDK Distribution
 
 %prep
 if [ "x$(whoami)" = "xroot" ]; then echo "Do not build as root"; false; fi
+
+pushd %{_sourcedir}
+sha256sum -c %{SOURCE1}
+popd
 
 %setup -cTn %{name}-%{version}
 

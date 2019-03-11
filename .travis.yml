@@ -1,0 +1,15 @@
+language: minimal
+
+services:
+    - docker
+
+before_install:
+    - docker build -t kristi/adoptopenjdk8-rpm .
+
+deploy:
+  provider: releases
+  api_key:
+    secure: DT50uclyw8+ghXvOQ3UoWYeXiF/33D3VzzPohD3UW052kJOt61X4HwQPEO/jF0UTH39hMuEDImyIlc8NlOGaSTGdT+BqMoPFirNBsyd9MFFqDm/1EsAo29PVfIWN9LgmpKYo40DA8Jla7zg2JVMo1TM7TmruhuBByMlERI9/qOEUOeHNlXvR40TcCzCtz05hTjJM3imEfjjHwZrk2mcO3tY+d810oT8diFk91Kstj3RtMDeNdzbxmYidiln2F7CdDq3pRfBcP2gL52qhHYg5mYdLPpLCIIJbQMcunSCDpl+Z0+Ncr/YQ7a34s2b3z/twyC3TaSjycOixuZhguA74ZIi3aEr/pFG41zsPrsrP1wRGPQST48OCGCChSR3M4pgKXxCf2IIJL5pXx4mqq2M0X283shHpRJgnI5P6gVCwKH75hG8JP+QZFtBSAND+Qk8W6d6szvwq4rV9EIZbBY757AbOBKlEpjK5oHURl8AiPYN4xYspo7erDLDAyxgo3qT0lrMBaQoP9csAGqobaiMtFpcSJ6LIvv/dDJnqzQPhUh0yM3/eKLu1Bp33J6aRf4LzFhIyuTKuvthjrOskSL0rSS7pW1Z6gSkWHhGSvpta3TVXkvR83/MJXUHaRI71m2tMQKCQiCQHsybqJTZEV2jmyotUlo3cAif/6gW7KY5V0MM=
+  file: rpm
+  on:
+    repo: kristi/adoptopenjdk-rpm
