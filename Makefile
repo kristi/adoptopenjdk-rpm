@@ -3,4 +3,4 @@ rpm:
 	rpmbuild -ba adoptopenjdk8.spec
 
 install-requirements:
-	yum install -y rpm-build spectool gcc
+	yum install -y rpm-build
