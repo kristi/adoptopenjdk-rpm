@@ -1,7 +1,12 @@
 # adoptopenjdk-rpm
-Rpm build for adoptopenjdk. See rpms in [Releases](https://github.com/kristi/adoptopenjdk-rpm/releases)
-
 [![Build Status](https://travis-ci.com/kristi/adoptopenjdk-rpm.svg?branch=master)](https://travis-ci.com/kristi/adoptopenjdk-rpm)
+
+*These are not official rpms. Use at your own risk. I built this while waiting for [AdoptOpenJDK to release rpms](https://github.com/AdoptOpenJDK/openjdk-installer/issues/26)*
+
+Rpm build for AdoptOpenJDK Java 8. 
+See rpms in [Releases](https://github.com/kristi/adoptopenjdk-rpm/releases)
+
+These are built in a Centos 7 docker image, but should work on any Centos/RHEL/Fedora based computer.
 
 ## Rpm Installation
 
