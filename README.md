@@ -6,7 +6,7 @@
 Rpm build for AdoptOpenJDK Java 8. 
 See rpms in [Releases](https://github.com/kristi/adoptopenjdk-rpm/releases)
 
-These are built in a Centos 7 docker image, but should work on any Centos/RHEL/Fedora based computer.
+These are built in a Centos 7 docker image, but should work on any Centos/RHEL/Fedora/Amazon Linux based OS.
 
 ## Rpm Installation
 
